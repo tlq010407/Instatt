@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO"/>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:enableOnBackInvokedCallback="true"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.New">
+        <activity
+            android:name=".Calendar.WeekViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Calendar.MonthViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Setting.NotificationAlarm"
+            android:exported="false" />
+        <activity
+            android:name=".Modules.ModuleDetails"
+            android:exported="false" />
+        <activity
+            android:name=".logout"
+            android:exported="false" />
+        <activity
+            android:name=".Setting.Feedback"
+            android:exported="false" />
+        <activity
+            android:name=".Modules.AbsentForm"
+            android:exported="true"/>
+        <activity
+            android:name=".Setting.Setting"
+            android:exported="true" />
+        <activity
+            android:name=".PersonalDetail.PersonalDetail"
+            android:exported="true"
+            android:label="" />
+        <activity
+            android:name=".Modules.AttendanceHistory"
+            android:exported="true"
+            android:label="@string/homepage_title" />
+        <activity
+            android:name=".Calendar.HomepageActivity"
+            android:exported="true"
+            android:label="@string/homepage_title" />
+        <activity
+            android:name=".LogIn"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".Setting.NotificationReceiver"
+            android:exported="true">
+        <intent-filter>
+            <action android:name="com.example.ACTION_SET_ALARM"/>
+        </intent-filter>
+        </receiver>
+
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

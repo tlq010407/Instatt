@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F6F8F3"
+    android:fillViewport="true"
+    android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_setting"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#3691A1"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <!-- Title Text -->
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#3691A1"
+            android:padding="5dp"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:id="@+id/back_btu"/>
+        <TextView
+            android:id="@+id/setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:text="Student Absence Verification Form"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+    </androidx.appcompat.widget.Toolbar>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/gray_round">
+
+                <!-- Student Information Section -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Student Information:"
+                    android:layout_alignParentTop="true"
+                    android:textStyle="bold"
+                    android:textSize="25dp"
+                    android:id="@+id/student_information_label"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/student_information_label"
+                    android:layout_marginTop="6dp"
+                    android:id="@+id/first_row">
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="4dp"
+                        android:layout_weight="1"
+                        android:hint="Student ID *"
+                        android:inputType="text"
+                        android:id="@+id/student_id"/>
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="First Name *"
+                        android:inputType="textPersonName"
+                        android:layout_marginLeft="4dp"
+                        android:id="@+id/first_name"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/first_row"
+                    android:layout_marginTop="8dp">
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Major *"
+                        android:inputType="text"
+                        android:layout_marginRight="4dp"
+                        android:id="@+id/major"/>
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Last Name *"
+                        android:inputType="textPersonName"
+                        android:layout_marginLeft="4dp"
+                        android:id="@+id/last_name"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/gray_round">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Absence Information:"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Date Absent*"
+                        android:inputType="date"
+                        android:id="@+id/date_absent"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Absent Module Name*"
+                        android:inputType="text"
+                        android:id="@+id/module_name"/>
+
+                </LinearLayout>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Reason for Absence*"
+                    android:inputType="textMultiLine"
+                    android:gravity="top"
+                    android:lines="5"
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/reason"/>
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I accept that the appeal is true."
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/checkbox"
+                    android:checked="false"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="If selecting this option, you do not need to attach documentation."
+                    android:layout_marginTop="4dp"
+                    android:textSize="10dp"
+                    android:textStyle="italic"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Supporting Documentation:"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Attach Document(s)"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#3691A1"
+                    android:drawableLeft="@android:drawable/ic_menu_upload"
+                    android:id="@+id/docu_submit"/>
+
+                <!-- Additional information about the allowed file types can be included using another TextView, if needed -->
+            </LinearLayout>
+
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Title for the Sign & Submit section -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sign and Submit:"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <!-- Container for the Electronic Signature and Date -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <!-- Electronic Signature EditText -->
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="Electronic Signature*"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:id="@+id/signature"/>
+
+                    <!-- Date TextView, clickable to show DatePickerDialog -->
+                    <TextView
+                        android:id="@+id/textView_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:text="Date: "
+                        android:layout_weight="1"/>
+                </LinearLayout>
+
+                <!-- Disclaimer Text -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I hereby certify that this form constitutes an official submission for processing."
+                    android:textSize="14sp"/>
+
+                <!-- Submit Button -->
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SUBMIT"
+                    android:backgroundTint="#3691A1"
+                    android:layout_marginTop="16dp"
+                    android:id="@+id/button_submit"/>
+
+            </LinearLayout>
+        </LinearLayout>
+</ScrollView>
+</LinearLayout>
